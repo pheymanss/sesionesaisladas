@@ -1,4 +1,4 @@
-# PRIMERA SESIÓN AISLADA - DATA ANALYSIS EN R
+# PRIMERA SESIoN AISLADA - DATA ANALYSIS EN R
 
 # Que vamos a aprender?
 
@@ -49,7 +49,7 @@
 # 3. Panel de consola: la mejor forma de explicarlo que se me ha ocurrido es
 # verla como una calculadora de esas que imprimen en papel los resultados. Ahi
 # lo que corran se va a ejecutar y les va a imprimir el resultado pero no pueden
-# cambiar lo que ya imprimio. Para eso están los scripts
+# cambiar lo que ya imprimio. Para eso estan los scripts
 
 # 4. Panel de muchas cosas:
 #   - Files: se ve la carpeta en la que estan trabajando, con todos los archivos
@@ -62,7 +62,7 @@
 #  pero invisibles para la sesion de trabajo. R ya trae bastantes paquetes instalados,
 #  y la mayoria estan "dormidos" cuando se abre RStudio.
 #  - Help: su mejor amigx! cuando uno esta apenas empezando a usar R es un poco
-#  dificil de leer, pero es increíblemente útil y una buena parte de los errores 
+#  dificil de leer, pero es increiblemente util y una buena parte de los errores 
 #  corriendo codigo se pueden resolver leyendo la documentacion.
 
 
@@ -92,7 +92,7 @@ letra_comilla_doble <- "a"
 letra == letra_comilla_doble
 
 # booleanos (falso y verdadero)
-# van en mayúscula
+# van en mayuscula
 FALSE
 False
 false
@@ -143,10 +143,10 @@ library(stringr)
 # - una unica carpeta con el nombre del proyecto, conteniendo:
 #   - carpeta con data cruda
 #   - carpeta con los scripts de R
-#   - carpeta con resultados: gráficos, tablas, etc.
+#   - carpeta con resultados: graficos, tablas, etc.
 # cada carpeta ordenada, con nombres claros y subcarpetas si fuera necesario
 
-# Tips para hacer su código presentable: 
+# Tips para hacer su codigo presentable: 
 # 1. comentar comentar y comentar: no solo comentar que estan haciendo en cada
 #   comando sino *por que* lo estan haciendo. Los comentarios no son solo para 
 #   exlicar las partes enredadas, sino para darle una *narrativa* al codigo
@@ -162,21 +162,21 @@ library(stringr)
 # de tabajar la data es casi tan importante como tener la data en si.
 
 # Tidy data es un estandar de manejo de data, en donde el significado de la
-# data está expresado en su estructura. Se trabaja con data rectangular, es 
+# data esta expresado en su estructura. Se trabaja con data rectangular, es 
 # decir, tablas, donde:
 
 # 1. Cada variable es una columna
-# 2. Cada observación de la población estudiada es una fila
-# 3. Cada tipo de información forma una tabla
+# 2. Cada observacion de la poblacion estudiada es una fila
+# 3. Cada tipo de informacion forma una tabla
 
-# Con eso basta por ahora, pero si quieren más detalle, un paper de Wickham
+# Con eso basta por ahora, pero si quieren mas detalle, un paper de Wickham
 # lo expone a profundidad: 
 # https://vita.had.co.nz/papers/tidy-data.pdf
 
 
 # 2. Tablas ------------------------------------------------------------------
 
-# Por  que sirve tanto tidy data en R? porque así es como se construyen las 
+# Por  que sirve tanto tidy data en R? porque asi es como se construyen las 
 # tablas en R!
 
 # _Escribir tablas diractamente ----
@@ -189,7 +189,7 @@ tabla <- data.frame(columna1 = c('A', 'B', 'C', 'D'),
 # _Cargar datos -----
 
 # Texto plano *aplausos* ----
-# a. Botón de Import dataset y copiar y pegar el codigo que diga ahi
+# a. Boton de Import dataset y copiar y pegar el codigo que diga ahi
 
 # b. leer desde un comando
 nombre_archivo_texto_plano <- 'data/data_importante_de_negocios.csv'
@@ -205,7 +205,7 @@ pkmn <- data.table::fread(nombre_archivo_texto_plano)
 
 # Excel *abucheos* ----
 nombre_archivo_excel <- 'data/data_importante_de_negocios_pero_en_excel.xlsx'
-# a. Botón de Import Dataset
+# a. Boton de Import Dataset
 
 # b. leer desde un comando
 # b.1 el paquete default:
@@ -224,7 +224,7 @@ View(pkmn)
 summary(pkmn)
 
 # hay un par de problemas con los nombres de las columnas:
-# 1. una columnas es '#', y ese símbolo ya se usa en R para los comentarios
+# 1. una columnas es '#', y ese simbolo ya se usa en R para los comentarios
 # 2. hay nombres con espacios como 'Sp. Atk'
 # R permite referirse a nombres asi con backtics: `` (la tecla a la par del 1 en el teclado en ingles)
 # pero eso es incomodo y hay un paquete que resuelve esas cosas:
@@ -249,10 +249,10 @@ corrplot::corrplot(cor(purrr::keep(pkmn, is.numeric)))
 
 library(ggplot2)
 
-# paper que explica todo detrás de la gramatica de graficos:
+# paper que explica todo detras de la gramatica de graficos:
 # https://byrneslab.net/classes/biol607/readings/wickham_layered-grammar.pdf
 
-# libro muy bonito sobre cuándo usar cada grafico: 
+# libro muy bonito sobre cuando usar cada grafico: 
 # https://serialmentor.com/dataviz/
 
 # siempre necesitamos:
@@ -268,7 +268,7 @@ ggplot(data = pkmn)
 # y si le damos el mapping, crea los ejes
 ggplot(data = pkmn, mapping = aes(x = number, y = hp))
 
-# y sobre estos ejes, se pueden agregar las capas. geom_point serían los puntos
+# y sobre estos ejes, se pueden agregar las capas. geom_point serian los puntos
 ggplot(data = pkmn, aes(x = number, y = hp)) + geom_point()
 
 # hacer puntos sobre un indice como `#` no tiene sentido 
@@ -316,7 +316,7 @@ ggplot(data = pkmn, aes(x = defense,
 
 # facet(t)ing ----
 
-# en vez de distinguir cada tipo por un color, vamos a hacer un gráfico para cada tipo
+# en vez de distinguir cada tipo por un color, vamos a hacer un grafico para cada tipo
 ggplot(data = pkmn, aes(x = defense,
                         y = attack)) +
   geom_point(aes(color = type_1,
@@ -324,7 +324,7 @@ ggplot(data = pkmn, aes(x = defense,
   scale_color_brewer(palette = 'Paired') + 
   facet_wrap(~ type_1)
 
-# todavía tenemos el problema de los colores 
+# todavia tenemos el problema de los colores 
 grafico_final_decente <- ggplot(data = pkmn, aes(x = defense,
                         y = attack, label = name)) +
   geom_point(aes(color = type_1,
@@ -362,3 +362,5 @@ ggplot(pkmn) +
 # ejemplos con codigo en R para cada geom_*: https://www.r-graph-gallery.com/ggplot2-package.html
 # problemas comunes al disenar visualizaciones: https://www.data-to-viz.com/caveats.html
 # siempre recomendado: https://r4ds.had.co.nz/
+
+
