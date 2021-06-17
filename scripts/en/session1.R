@@ -1,7 +1,6 @@
 # SESSION ONE
 
 # What are we going to learn today?
-#   - How to install R and RStudio on your Mastecrad laptop
 #   - RStudio Interface
 #   - Object definition
 #   - Function calls
@@ -12,10 +11,9 @@
 #   - Read excel files
 #   - ggplot2, from scratch to advanced
 
-# What are we (not* going to learn?
+# What are we (not* going to learn?)
 #   - Classic programming things: for, if, else, while, etc. (see https://learnxinyminutes.com/docs/r for a quick recap)
 #   - Statistics!
-
 
 # 0. Getting started ------------------------------------------------------
 
@@ -24,13 +22,6 @@
 # Installing R measn two separate tasks:
 # 1. Installing R, the programming language
 # 2. Installing RStudio, the integrated development environment (IDE) for R programming
-
-# Luckily, both things are right next to each other on ASAP Software, so:
-#  Navigate to The Hub > Go to Tools > Open ASAP Software > 
-#  > Scroll or search for 'R For Windows' (current version is 3.5.2)'
-#  > Scroll or search for 'Rstudio' (current version is 1.1.463)
-#  Both are slightly below current versions outside of ASAP (3.6 and
-#  1.3 respectively), but thos e versions are more than serviceable.
 
 # _ RStudio Interface -----------------------------------------------------
 
